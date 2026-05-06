@@ -3,18 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qr Code App</title>
+    <meta name="description" content="Simple QR Code Generator - Create and download high-quality QR codes instantly.">
+    <title>QR Pro | Clean QR Generator</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <p>Enter your text or URL</p>
-        <input type="text" placeholder="Text or URL" id="qrText">
-        <div id="imgBox">
-            <img src="" alt="" id="qrImage">
+    <header class="top-nav">
+        <div class="logo">QR<span>PRO</span></div>
+        <div class="nav-controls">
+            <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
+                <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+            </button>
         </div>
-        <button onclick="generateQR()">Generate QR Code</button>
-    </div>
+    </header>
+
+    <main class="container">
+        <div class="card shadow-soft">
+            <div class="brand-logo">
+                <img src="assets/logo.jpg" alt="Web Builders">
+            </div>
+            <h1 id="title">QR Code Generator</h1>
+            <p id="subtitle">Enter your text or URL to generate a secure QR code instantly.</p>
+            
+            <div class="input-group">
+                <input type="text" id="qrText" placeholder="https://example.com" aria-label="QR Code Text">
+            </div>
+
+            <div id="imgBox" class="qr-display">
+                <div id="loading" class="loader hidden"></div>
+                <img src="" alt="QR Code" id="qrImage">
+            </div>
+
+            <div class="action-buttons">
+                <button id="generateBtn" onclick="generateQR()" class="btn-primary">Generate QR Code</button>
+                <button id="downloadBtn" onclick="downloadQR()" class="btn-outline hidden">Download QR</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 QR PRO by Web Builders. All rights reserved.</p>
+    </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
